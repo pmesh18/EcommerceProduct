@@ -1,8 +1,6 @@
 package dev.prathamesh.EcommerceProducts2024.Controller;
 
 import dev.prathamesh.EcommerceProducts2024.Dto.FakeStoreDto;
-import dev.prathamesh.EcommerceProducts2024.Dto.ProductResponseDto;
-import dev.prathamesh.EcommerceProducts2024.Service.FakeStoreProductImplementation;
 import dev.prathamesh.EcommerceProducts2024.Service.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +28,7 @@ public class ProductController {
 
     @GetMapping("/product/{id}")
     public ResponseEntity getProductByID(@PathVariable("id") int id ){
-        ProductResponseDto fakeStoreResponseProductByID =  productServices.getProductByID(id);
+        FakeStoreDto fakeStoreResponseProductByID =  productServices.getProductByID(id);
         return ResponseEntity.ok(fakeStoreResponseProductByID);
     }
 }

@@ -12,7 +12,7 @@ public class ProductResponseDto {
     private String Description;
     private String Category;
     private String Image;
-    private String Rating;
+    private double Rating;
 
 
 

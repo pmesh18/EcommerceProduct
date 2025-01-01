@@ -1,7 +1,6 @@
 package dev.prathamesh.EcommerceProducts2024.Client;
 
 import dev.prathamesh.EcommerceProducts2024.Dto.FakeStoreDto;
-import dev.prathamesh.EcommerceProducts2024.Dto.ProductResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -28,12 +27,12 @@ public class ProductClient {
 
     }
 
-    public ProductResponseDto getProductById(int id){
+    public FakeStoreDto getProductById(int id){
 
         String getProductByIDURL =  FakeStoreProductURL.concat(FakeStoreProductPath).concat("/"+ id);
         RestTemplate restTemplate = restTemplateBuilder.build();
-        ResponseEntity<ProductResponseDto> productByID =
-                restTemplate.getForEntity(getProductByIDURL, ProductResponseDto.class);
+        ResponseEntity<FakeStoreDto> productByID =
+                restTemplate.getForEntity(getProductByIDURL, FakeStoreDto.class);
         return productByID.getBody();
     }
 }

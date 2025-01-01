@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ProductServices {
     List<FakeStoreDto> getAllProduct();
-    ProductResponseDto getProductByID(int id);
+    FakeStoreDto getProductByID(int id);
 }
